@@ -1,0 +1,211 @@
+{
+  "experiment": {
+    "id": "EXP-2025-09-PP-01-I1",
+    "name": "Pricing Page \u2013 Value Prop Emphasis",
+    "run_window": {
+      "start": "2025-09-15",
+      "end": "2025-09-28"
+    },
+    "traffic_split": {
+      "control": 50,
+      "variant": 50
+    },
+    "assignment": {
+      "unit": "user",
+      "sticky": true
+    },
+    "scope": {
+      "routes": [
+        "/pricing"
+      ],
+      "platforms": [
+        "web"
+      ],
+      "devices": [
+        "desktop",
+        "mobile"
+      ],
+      "segments": [
+        "All",
+        "SMB",
+        "Enterprise"
+      ],
+      "exclusions": [
+        "hasActiveTrial=true"
+      ]
+    }
+  },
+  "metrics": [
+    {
+      "name": "Signup rate",
+      "unit": "user_rate",
+      "segments": [
+        {
+          "segment": "All",
+          "control": {
+            "value": 0.045,
+            "n": 340000
+          },
+          "variant": {
+            "value": 0.046,
+            "n": 342000
+          },
+          "confidence_interval": {
+            "low": -3.0,
+            "high": 8.0,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.32
+        },
+        {
+          "segment": "SMB",
+          "control": {
+            "value": 0.055,
+            "n": 89000
+          },
+          "variant": {
+            "value": 0.057,
+            "n": 90000
+          },
+          "confidence_interval": {
+            "low": -1.0,
+            "high": 10.0,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.12
+        },
+        {
+          "segment": "Enterprise",
+          "control": {
+            "value": 0.032,
+            "n": 148000
+          },
+          "variant": {
+            "value": 0.0323,
+            "n": 149000
+          },
+          "confidence_interval": {
+            "low": -5.0,
+            "high": 9.0,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.4
+        }
+      ]
+    },
+    {
+      "name": "CTR",
+      "unit": "user_rate",
+      "segments": [
+        {
+          "segment": "All",
+          "control": {
+            "value": 0.12,
+            "n": 340000
+          },
+          "variant": {
+            "value": 0.121,
+            "n": 342000
+          },
+          "confidence_interval": {
+            "low": -0.8,
+            "high": 3.5,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.28
+        },
+        {
+          "segment": "SMB",
+          "control": {
+            "value": 0.14,
+            "n": 89000
+          },
+          "variant": {
+            "value": 0.142,
+            "n": 90000
+          },
+          "confidence_interval": {
+            "low": -1.2,
+            "high": 4.8,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.22
+        },
+        {
+          "segment": "Enterprise",
+          "control": {
+            "value": 0.09,
+            "n": 148000
+          },
+          "variant": {
+            "value": 0.0906,
+            "n": 149000
+          },
+          "confidence_interval": {
+            "low": -1.5,
+            "high": 4.5,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.35
+        }
+      ]
+    },
+    {
+      "name": "Trial start (from signup)",
+      "unit": "rate_given_signup",
+      "segments": [
+        {
+          "segment": "All",
+          "control": {
+            "value": 0.28,
+            "n": 15000
+          },
+          "variant": {
+            "value": 0.281,
+            "n": 15700
+          },
+          "confidence_interval": {
+            "low": -3.0,
+            "high": 3.5,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.88
+        },
+        {
+          "segment": "SMB",
+          "control": {
+            "value": 0.32,
+            "n": 4800
+          },
+          "variant": {
+            "value": 0.323,
+            "n": 5130
+          },
+          "confidence_interval": {
+            "low": -4.0,
+            "high": 6.0,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.54
+        },
+        {
+          "segment": "Enterprise",
+          "control": {
+            "value": 0.22,
+            "n": 3200
+          },
+          "variant": {
+            "value": 0.219,
+            "n": 3250
+          },
+          "confidence_interval": {
+            "low": -6.0,
+            "high": 5.0,
+            "unit": "pct_relative"
+          },
+          "p_value": 0.77
+        }
+      ]
+    }
+  ]
+}
